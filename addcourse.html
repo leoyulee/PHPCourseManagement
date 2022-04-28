@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Add Course</title>
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+<h2>Add a Course Record</h2>
+<p>This will add a record to the course table in the MySQL Database</p>
+<p>Course "SENG-1234" is pre-populated as an example</p>
+<!-- here is the start of the form -->
+<form action="addcourse.php">
+  Course ID:<br>
+  <input type="text" name="course_id" value="1">
+  <br><br>
+  Program ID:<br>
+  <input type="text" name="program_id" value="1">
+  <br><br>
+  Course Code:<br>
+  <input type="text" name="code" value="SENG-1234">
+  <br><br>
+  Course Title:<br>
+  <input type="text" name="title" value="Unnamed Course">
+  <br><br>
+  Course Description:<br>
+  <input type="text" name="description" value="Placeholder Description">
+  <br><br>
+  Number of Credits:<br>
+  <input type="text" name="credits" value="3">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><br><a href="index.html" title="Home Page" target="_parent">Return to Home</a>
+</body>
+</html>

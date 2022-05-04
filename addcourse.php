@@ -28,13 +28,14 @@
 		echo "MySQL Connection Succeeded<br><br>";
 		
 		//pull the attribute that was passed with the html form GET request and put into a local variable.
-		$course_id = $_GET["course_id"];
-		$title = $_GET["title"];
-		$code = $_GET["code"];
-		$credits = $_GET["credits"];
-		$description = $_GET["description"];
 		$program_id = $_GET["program_id"];
-		echo "Adding record for: " . $firstname . " " . $lastname;
+		$term_id = $_GET["term_id"];
+		$code = $_GET["code"];
+		$name = $_GET["name"];
+		$description = $_GET["description"];
+		$credits = $_GET["credits"];
+		$instructiontype = $_GET["instructiontype"];
+		echo "Adding course: [" . $program_id . "-" . $code . "] " . $name;
 	
 		echo "<br><br>";
 		
@@ -45,34 +46,22 @@
 		//$sql = "INSERT INTO employees (emp_no, birth_date, first_name, last_name, gender, hire_date) VALUES
 		//(" . $number . ", " . $birthdate . ", '" .  $firstname . "', '" .  $lastname . "', '" .  $gender . "', '" .  $hirehdate . "')";
 
-		$sql2 = "INSERT INTO Course (program_id, title, credits) VALUES
-		(" . $program_id . ",
-		'" . $title . "',
-		" .  $credits . ");";
+		$sql2 = "INSERT INTO COURSE_TBL(program_id, term_id, course_code, course_name, course_description, credits, instruction_type) VALUES
+		(".$program_id.",
+		".$term_id.",
+		".$code.",
+		'".$name."',
+		'".$description."',
+		".$credits.",
+		'".$instructiontype."');";
 	
 		if ($conn->query($sql2) === TRUE){
-			
-			echo "New Program Created Successfully";
-			
-		} else {
-		
-			echo "Error: " . $sql2 . "<br>" . $conn->error;
-			
-		}
-		echo "<br><br>";
-		$sql = "INSERT INTO Course (course_id, course_program_id, code, description) VALUES
-		(" . $course_id . ",
-		" . $program_id . ",
-		'" . $code . "',
-		'" .  $description . "');";
-	
-		if ($conn->query($sql) === TRUE){
 			
 			echo "New Course Created Successfully";
 			
 		} else {
 		
-			echo "Error: " . $sql . "<br>" . $conn->error;
+			echo "Error: " . $sql2 . "<br>" . $conn->error;
 			
 		}
 		

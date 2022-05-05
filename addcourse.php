@@ -13,21 +13,21 @@
 <!-- here is the start of the form -->
 <form action="addcourseresult.php">
   <?php
-    echo "Program:<br>";
     //some variables
     $servername = "localhost";  //mysql is on the same host as apache (not realistic but whatevs)
     $username = "admin1234";    //username for database
     $password = "password1234";		//password for the user
     $dbname = "dunwoody_advising_schema";  	//which db you're going to use
-  
+    
     //this is the php object oriented style of creating a mysql connection
     $conn = new mysqli($servername, $username, $password, $dbname);  
-  
+    
     //check for connection success
     if ($conn->connect_error) {
       echo "MySQL Connection Failed";
       die("MySQL Connection Failed: " . $conn->connect_error);
     }
+    echo "Program:<br>";
     //create the SQL select statement to query program information
     $sqlProgram = "SELECT program_id,program_code FROM PROGRAM_TBL;";
   

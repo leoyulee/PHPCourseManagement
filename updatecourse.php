@@ -15,7 +15,7 @@
 <p>This will search the courses table in the MySQL Database</p>
 <p>The PHP Page will simply display the results of the query</p>
 <p>Course "Weedman" is pre-populated as an example</p>
-<form action="updatecourseresult.php">
+<form action="deletecourse.php">
 <?php
   //some variables
   $servername = "localhost";  //mysql is on the same host as apache (not realistic but whatevs)

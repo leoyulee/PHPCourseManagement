@@ -46,6 +46,7 @@
       $param = explode("=", $chunk); //[0] being the name, [1] being the value. Akin to $_GET[0] = [1]
       $VarName = $param[0];
       $VarValue = $param[1];
+      echo $VarName . " " . $VarValue;
       /*if ($VarName == 'course_delete') {
         $sqlDelete = "SELECT course_id, season, program_code, course_code, course_name, course_description, credits, required, instruction_type
         FROM TERM_TBL t, PROGRAM_TBL p, COURSE_TBL c

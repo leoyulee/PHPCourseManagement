@@ -46,7 +46,7 @@
       $param = explode("=", $chunk); //[0] being the name, [1] being the value. Akin to $_GET[0] = [1]
       $VarName = $param[0];
       $VarValue = $param[1];
-      if ($VarName == 'course_delete') {
+      /*if ($VarName == 'course_delete') {
         $sqlDelete = "SELECT course_id, season, program_code, course_code, course_name, course_description, credits, required, instruction_type
         FROM TERM_TBL t, PROGRAM_TBL p, COURSE_TBL c
         WHERE c.course_id = ". $VarValue ."
@@ -72,7 +72,7 @@
           //print rows
           $functionOutput = "[";
           $functionOutputCount = 0;
-          /*while($row == $result->fetch_assoc()){
+          while($row == $result->fetch_assoc()){
             $functionOutputCount += 1;
             if ($functionOutputCount == 1){
               $functionOutput = $functionOutput . $course_id;
@@ -94,7 +94,7 @@
             }
             $output = $output . "<td>".$row["instruction_type"]."</td>";
             echo $output;
-          }*/
+          }
           $functionOutput = $functionOutput . "]";
           echo "</table>"
           echo "<input type=\"submit\" value=\"Yes\">";
@@ -103,7 +103,7 @@
         } else {
             echo "Error: " . $sqlDelete . "<br>" . $conn->error;
         }
-      }
+      }*/
     }
     $conn->close();
   ?>

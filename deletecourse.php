@@ -6,11 +6,9 @@
 <link rel="stylesheet" href="stylesheet.css">
 <script>
   function backToManageCourses() {
-      window.alert("managecourses");
       window.location.assign("managecourses.php");
   };
   function deleteCourses(coursesToDelete) {
-      window.alert("deletecourseresult");
       var output = "course_delete=" + coursesToDelete[0];
       for (var i=1; i < coursesToDelete.length; i++) {
         output += "&course_delete=" + coursesToDelete[i];

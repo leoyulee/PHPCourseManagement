@@ -47,7 +47,7 @@
       $VarName = $param[0];
       $VarValue = $param[1];
       echo $VarName . " " . $VarValue;
-      /*if ($VarName == 'course_delete') {
+      if ($VarName == 'course_delete') {
         $sqlDelete = "SELECT course_id, season, program_code, course_code, course_name, course_description, credits, required, instruction_type
         FROM TERM_TBL t, PROGRAM_TBL p, COURSE_TBL c
         WHERE c.course_id = ". $VarValue ."
@@ -58,7 +58,8 @@
         $result = $conn->query($sqlDelete);
         echo "<br><br>";
         if ($result == true){
-          echo "<table style=\"width:25%\">";
+          echo $result . " " . $VarName . " " . $VarValue;
+          /*echo "<table style=\"width:25%\">";
           echo "<tr>
           <td><strong>Course ID</strong></td>
           <td><strong>Season</strong></td>
@@ -100,11 +101,11 @@
           echo "</table>"
           echo "<input type=\"submit\" value=\"Yes\">";
           echo "<input type=\"button\" onclick = \"updateCourse(".$functionOutput.")\" value = \"Yes\">";
-          echo "<input type=\"button\" onclick = \"backToManageCourses()\" value = \"No\">";
+          echo "<input type=\"button\" onclick = \"backToManageCourses()\" value = \"No\">";*/
         } else {
             echo "Error: " . $sqlDelete . "<br>" . $conn->error;
         }
-      }*/
+      }
     }
     $conn->close();
   ?>

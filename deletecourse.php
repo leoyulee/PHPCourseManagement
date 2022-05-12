@@ -71,7 +71,7 @@
           //print rows
           $functionOutput = "[";
           $functionOutputCount = 0;
-          while($row == $result->fetch_assoc()){
+          while($row = $result->fetch_assoc()){
             $functionOutputCount += 1;
             if ($functionOutputCount == 1){
               $functionOutput = $functionOutput . $course_id;
@@ -93,7 +93,7 @@
             }
             $output = $output . "<td>".$row["instruction_type"]."</td>";
             echo $output;
-            echo "Done ".$functionOutputCount."<br>";
+            //echo "Done ".$functionOutputCount."<br>";
           }
           $functionOutput = $functionOutput . "]";
           echo "</table>";

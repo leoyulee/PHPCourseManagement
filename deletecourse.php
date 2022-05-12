@@ -74,9 +74,9 @@
           while($row = $result->fetch_assoc()){
             $functionOutputCount += 1;
             if ($functionOutputCount == 1){
-              $functionOutput = $functionOutput . $course_id;
+              $functionOutput = $functionOutput . $row["course_id"];
             }else{
-              $functionOutput = $functionOutput . ",".$course_id;
+              $functionOutput = $functionOutput . ",".$row["course_id"];
             }
             $output = "<tr>
             <td>".$row["course_id"]."</td>
@@ -98,7 +98,7 @@
           $functionOutput = $functionOutput . "]";
           echo "</table>";
           //echo "<input type=\"submit\" value=\"Yes\">";
-          echo $functionOutput;
+          echo $functionOutput . "<br>";
           echo "<input type=\"button\" onclick = \"updateCourse(".$functionOutput.")\" value = \"Yes\">";
           echo "<input type=\"button\" onclick = \"backToManageCourses()\" value = \"No\">";
         } else {

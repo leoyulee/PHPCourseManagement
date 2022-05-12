@@ -99,7 +99,7 @@
           echo "</table>";
           //echo "<input type=\"submit\" value=\"Yes\">";
           echo $functionOutput . "<br>";
-          echo "<input type=\"button\" onclick = \"updateCourse(".$functionOutput.")\" value = \"Yes\">";
+          echo "<input type=\"button\" onclick = \"deleteCourses(".$functionOutput.")\" value = \"Yes\">";
           echo "<input type=\"button\" onclick = \"backToManageCourses()\" value = \"No\">";
         } else {
             echo "Error: " . $sqlDelete . "<br>" . $conn->error;

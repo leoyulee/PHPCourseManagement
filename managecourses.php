@@ -6,10 +6,10 @@
 <link rel="stylesheet" href="stylesheet.css">
 <script>
     function newCourse() {
-        window.location.assign("addcourse.php")
+        window.location.assign("addcourse.php");
     }
     function updateCourse(courseID) {
-        window.location.assign("updatecourse.php?course_id=" + courseID)//window.location.protocol + window.location.hostname + "/PHPCourseManagement/updatecourse.html?course_id=" + courseID)
+        window.location.assign("updatecourse.php?course_id=" + courseID);//window.location.protocol + window.location.hostname + "/PHPCourseManagement/updatecourse.html?course_id=" + courseID)
     }
 </script>
 </head>

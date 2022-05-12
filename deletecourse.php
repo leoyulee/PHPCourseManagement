@@ -5,18 +5,18 @@
 <title>Delete a Course Record</title>
 <link rel="stylesheet" href="stylesheet.css">
 <script>
-    function backToManageCourses() {
-        window.alert("managecourses");
-        window.location.assign("managecourses.php")
-    }
-    function deleteCourses(coursesToDelete) {
-        window.alert("deletecourseresult");
-        let output = "course_delete=" + coursesToDelete[0];
-        for (let i=1, i < coursesToDelete.length; i++) {
-          output += "&course_delete=" + coursesToDelete[i]
-        }
-        window.location.assign("deletecourseresult.php?" + output)//window.location.protocol + window.location.hostname + "/PHPCourseManagement/updatecourse.html?course_id=" + courseID)
-    }
+  function backToManageCourses() {
+      window.alert("managecourses");
+      window.location.assign("managecourses.php");
+  };
+  function deleteCourses(coursesToDelete) {
+      window.alert("deletecourseresult");
+      var output = "course_delete=" + coursesToDelete[0];
+      for (var i=1, i < coursesToDelete.length; i++) {
+        output += "&course_delete=" + coursesToDelete[i];
+      };
+      window.location.assign("deletecourseresult.php?" + output);//window.location.protocol + window.location.hostname + "/PHPCourseManagement/updatecourse.html?course_id=" + courseID)
+  };
 </script>
 </head>
 

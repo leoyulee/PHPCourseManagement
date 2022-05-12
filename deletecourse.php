@@ -105,6 +105,7 @@
         }
       }
     }
+    $conn->close();
   ?>
 </form>
 <br>

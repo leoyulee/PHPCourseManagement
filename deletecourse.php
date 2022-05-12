@@ -59,7 +59,7 @@
         echo "<br><br>";
         if ($result == true){
           echo "result true " . $VarName . " " . $VarValue;
-          /*echo "<table style=\"width:25%\">";
+          echo "<table style=\"width:25%\">";
           echo "<tr>
           <td><strong>Course ID</strong></td>
           <td><strong>Season</strong></td>
@@ -74,7 +74,7 @@
           //print rows
           $functionOutput = "[";
           $functionOutputCount = 0;
-          while($row == $result->fetch_assoc()){
+          /*while($row == $result->fetch_assoc()){
             $functionOutputCount += 1;
             if ($functionOutputCount == 1){
               $functionOutput = $functionOutput . $course_id;
@@ -96,12 +96,12 @@
             }
             $output = $output . "<td>".$row["instruction_type"]."</td>";
             echo $output;
-          }
+          }*/
           $functionOutput = $functionOutput . "]";
           echo "</table>"
           echo "<input type=\"submit\" value=\"Yes\">";
           echo "<input type=\"button\" onclick = \"updateCourse(".$functionOutput.")\" value = \"Yes\">";
-          echo "<input type=\"button\" onclick = \"backToManageCourses()\" value = \"No\">";*/
+          echo "<input type=\"button\" onclick = \"backToManageCourses()\" value = \"No\">";
         } else {
             echo "Error: " . $sqlDelete . "<br>" . $conn->error;
         }

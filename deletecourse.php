@@ -98,6 +98,7 @@
           $functionOutput = $functionOutput . "]";
           echo "</table>";
           //echo "<input type=\"submit\" value=\"Yes\">";
+          echo $functionOutput;
           echo "<input type=\"button\" onclick = \"updateCourse(".$functionOutput.")\" value = \"Yes\">";
           echo "<input type=\"button\" onclick = \"backToManageCourses()\" value = \"No\">";
         } else {

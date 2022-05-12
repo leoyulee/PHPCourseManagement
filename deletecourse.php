@@ -53,12 +53,12 @@
         WHERE c.course_id = ". $VarValue ."
         and c.program_id = p.program_id
         and c.term_id = t.term_id;";
-
+        echo $sqlDelete;
         //put the resultset into a variable
         $result = $conn->query($sqlDelete);
         echo "<br><br>";
         if ($result == true){
-          echo $result . " " . $VarName . " " . $VarValue;
+          echo "result true " . $VarName . " " . $VarValue;
           /*echo "<table style=\"width:25%\">";
           echo "<tr>
           <td><strong>Course ID</strong></td>

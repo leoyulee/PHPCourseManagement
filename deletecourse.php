@@ -6,9 +6,11 @@
 <link rel="stylesheet" href="stylesheet.css">
 <script>
     function backToManageCourses() {
+        window.alert("managecourses");
         window.location.assign("managecourses.php")
     }
     function deleteCourses(coursesToDelete) {
+        window.alert("deletecourseresult");
         let output = "course_delete=" + coursesToDelete[0];
         for (let i=1, i < coursesToDelete.length; i++) {
           output += "&course_delete=" + coursesToDelete[i]
@@ -100,7 +102,6 @@
           //echo "<input type=\"submit\" value=\"Yes\">";
           echo $functionOutput . "<br>";
           echo "<input type=\"button\" onclick = \"deleteCourses(".$functionOutput.")\" value = \"Yes\">";
-          echo "<input type=\"button\" onclick = \"backToManageCourses()\" value = \"No\">";
         } else {
             echo "Error: " . $sqlDelete . "<br>" . $conn->error;
         }
@@ -108,6 +109,7 @@
     }
     $conn->close();
   ?>
+  <input type=\"button\" onclick = backToManageCourses() value = "No">
 </form>
 <br>
 <hr> <!-- This is the hr tag, or "horizonatal reference" -->

@@ -109,7 +109,7 @@
     }
     $conn->close();
   ?>
-  <input type=\"button\" onclick = backToManageCourses() value = "No">
+  <input type="button" onclick = backToManageCourses() value = "No">
 </form>
 <br>
 <hr> <!-- This is the hr tag, or "horizonatal reference" -->

@@ -72,7 +72,7 @@
           //print rows
           $functionOutput = "[";
           $functionOutputCount = 0;
-          while($row == $result->fetch_assoc()){
+          /*while($row == $result->fetch_assoc()){
             $functionOutputCount += 1;
             if ($functionOutputCount == 1){
               $functionOutput = $functionOutput . $course_id;
@@ -94,7 +94,7 @@
             }
             $output = $output . "<td>".$row["instruction_type"]."</td>";
             echo $output;
-          }
+          }*/
           $functionOutput = $functionOutput . "]";
           echo "</table>"
           echo "<input type=\"submit\" value=\"Yes\">";

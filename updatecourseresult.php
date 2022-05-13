@@ -47,9 +47,9 @@
 		$sql = "UPDATE COURSE_TBL SET
 		program_id = ".$program_id.",
 		term_id = ".$term_id.",
-		code = '".$code."',
-		name = '".$name."',
-		description = '".$description."',
+		course_code = '".$code."',
+		course_name = '".$name."',
+		course_description = '".$description."',
 		credits = ".$credits.",
 		instruction_type = ".$instructiontype."
 		WHERE course_id = ".$course_id.";";

@@ -28,13 +28,15 @@
 		echo "MySQL Connection Succeeded<br><br>";
 		
 		//pull the attribute that was passed with the html form GET request and put into a local variable.
-		$lastname = $_GET["lastname"];
-		$firstname = $_GET["firstname"];
-		$birthdate = $_GET["birthdate"];
-		$hirehdate = $_GET["hirehdate"];
-		$gender = $_GET["gender"];
-		$number = $_GET["number"];
-		echo "Adding record for: " . $firstname . " " . $lastname;
+		$course_id = $_GET["course_id"]
+		$program_id = $_GET["program_id"];
+		$term_id = $_GET["term_id"];
+		$code = $_GET["code"];
+		$name = $_GET["name"];
+		$description = $_GET["description"];
+		$credits = $_GET["credits"];
+		$instructiontype = $_GET["instructiontype"];
+		echo "Updating record for: " . $name;
 	
 		echo "<br><br>";
 		
@@ -42,14 +44,27 @@
 		//based on using the GET attribute
 		//this statement needs to be variablized to put in the data passed from the form
 		//right now it is hardcoded.
-		$sql = "UPDATE courses SET birth_date = ".$birthdate.", first_name = '".$firstname."', last_name = '".$lastname."', gender = '".$gender."', hire_date = '".$hirehdate."'
-		WHERE emp_no = ".$number.";";
+		$sql = "UPDATE COURSE_TBL SET
+		program_id = ".$program_id.",
+		term_id = ".$term_id.",
+		code = '".$code."',
+		name = '".$name."',
+		description = '".$description."',
+		credits = ".$credits.",
+		instruction_type = ".$instructiontype."
+		WHERE course_id = ".$course_id.";";
 	
 	
 		if ($conn->query($sql) === TRUE){
 			
 			echo "Course ".$number." Updated Successfully";
-			echo "Values: birth_date = ".$birthdate.", first_name = '".$firstname."', last_name = '".$lastname."', gender = '".$gender."', hire_date = '".$hirehdate."'";
+			echo "Values: program_id = ".$program_id.",
+			term_id = ".$term_id.",
+			code = '".$code."',
+			name = '".$name."',
+			description = '".$description."',
+			credits = ".$credits.",
+			instruction_type = ".$instructiontype;
 			
 		} else {
 		

@@ -51,7 +51,7 @@
 		course_name = '".$name."',
 		course_description = '".$description."',
 		credits = ".$credits.",
-		instruction_type = ".$instructiontype."
+		instruction_type = '".$instructiontype."'
 		WHERE course_id = ".$course_id.";";
 	
 	

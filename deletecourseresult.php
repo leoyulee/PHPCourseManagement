@@ -35,7 +35,7 @@
 				echo "<br><br>";
 				//create the SQL select statement, notice the funky string concat at the end to variablize the query
 				//based on using the GET attribute
-				$sql = "DELETE FROM Course where course_id = ".$VarValue.";";
+				$sql = "DELETE FROM COURSE_TBL where course_id = ".$VarValue.";";
 				//put the resultset into a variable, again object oriented way of doing things here
 				$result = $conn->query($sql);
 				//if there were no records found say so, otherwise create a while loop that loops through all rows

@@ -39,11 +39,6 @@
 		echo "Updating record for: " . $name;
 	
 		echo "<br><br>";
-		
-		//create the SQL insert statement, notice the funky string concat at the end to variablize the query
-		//based on using the GET attribute
-		//this statement needs to be variablized to put in the data passed from the form
-		//right now it is hardcoded.
 		$sql = "UPDATE COURSE_TBL SET
 		program_id = ".$program_id.",
 		term_id = ".$term_id.",
@@ -58,7 +53,7 @@
 		if ($conn->query($sql) === TRUE){
 			
 			echo "Course ".$number." Updated Successfully";
-			echo "Values: program_id = ".$program_id.",
+			echo "<br>Values: program_id = ".$program_id.",
 			term_id = ".$term_id.",
 			code = '".$code."',
 			name = '".$name."',

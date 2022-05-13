@@ -39,8 +39,23 @@
         die("MySQL Connection Failed: " . $conn->connect_error);
     }
     
+    echo "<table style=\"width:25%\">";
+    echo "<tr>
+    <td><strong>Course ID</strong></td>
+    <td><strong>Season</strong></td>
+    <td><strong>Program Code</strong></td>
+    <td><strong>Course Code</strong></td>
+    <td><strong>Course Name</strong></td>
+    <td><strong>Course Description</strong></td>
+    <td><strong>Credits</strong></td>
+    <td><strong>Is Required?</strong></td>
+    <td><strong>Instruction Type</strong></td>
+    </tr>";
+
     $SplitURI = explode('?', $_SERVER['REQUEST_URI']); //Returns "/PHPCourseManagement/managecourses.php","course_delete=1&course_delete=2&course_delete=3" where the ? is the divider
     $FormInfo = $SplitURI[1]; //The variables we want
+    $functionOutput = "[";
+    $functionOutputCount = 0;
     foreach (explode('&', $FormInfo) as $chunk) //for each variable pair given from splitting the variables connected by a & do
     {
       $param = explode("=", $chunk); //[0] being the name, [1] being the value. Akin to $_GET[0] = [1]
@@ -56,21 +71,8 @@
         $result = $conn->query($sqlDelete);
         echo "<br><br>";
         if ($result == true){
-          echo "<table style=\"width:25%\">";
-          echo "<tr>
-          <td><strong>Course ID</strong></td>
-          <td><strong>Season</strong></td>
-          <td><strong>Program Code</strong></td>
-          <td><strong>Course Code</strong></td>
-          <td><strong>Course Name</strong></td>
-          <td><strong>Course Description</strong></td>
-          <td><strong>Credits</strong></td>
-          <td><strong>Is Required?</strong></td>
-          <td><strong>Instruction Type</strong></td>
-          </tr>";
+          
           //print rows
-          $functionOutput = "[";
-          $functionOutputCount = 0;
           while($row = $result->fetch_assoc()){
             $functionOutputCount += 1;
             if ($functionOutputCount == 1){
@@ -95,16 +97,14 @@
             echo $output;
             //echo "Done ".$functionOutputCount."<br>";
           }
-          $functionOutput = $functionOutput . "]";
-          echo "</table>";
-          //echo "<input type=\"submit\" value=\"Yes\">";
-          echo $functionOutput . "<br>";
-          echo "<input type=\"button\" onclick = \"deleteCourses(".$functionOutput.")\" value = \"Yes\">";
         } else {
             echo "Error: " . $sqlDelete . "<br>" . $conn->error;
         }
       }
     }
+    echo "</table>";
+    $functionOutput = $functionOutput . "]";
+    echo "<input type=\"button\" onclick = \"deleteCourses(".$functionOutput.")\" value = \"Yes\">";
     $conn->close();
   ?>
   <input type="button" onclick = backToManageCourses() value = "No">

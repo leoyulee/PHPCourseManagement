@@ -28,7 +28,7 @@
 		echo "MySQL Connection Succeeded<br><br>";
 		
 		//pull the attribute that was passed with the html form GET request and put into a local variable.
-		$course_id = $_GET["course_id"]
+		$course_id = $_GET["course_id"];
 		$program_id = $_GET["program_id"];
 		$term_id = $_GET["term_id"];
 		$code = $_GET["code"];

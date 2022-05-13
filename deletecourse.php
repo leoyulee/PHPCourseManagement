@@ -23,7 +23,6 @@
 <p>Are you sure you want to delete the following course(s)?</p>
 <br>
 <hr> <!-- This is the hr tag, or "horizonatal reference" -->
-<br>
 <form action="deletecourseresult.php">
   <?php
     $servername = "localhost";  //mysql is on the same host as apache (not realistic but whatevs)
@@ -69,9 +68,7 @@
         and c.term_id = t.term_id;";
         //put the resultset into a variable
         $result = $conn->query($sqlDelete);
-        echo "<br><br>";
         if ($result == true){
-          
           //print rows
           while($row = $result->fetch_assoc()){
             $functionOutputCount += 1;

@@ -71,7 +71,7 @@
             $result = $conn->query($sql);
             if ($result->num_rows > 0){
                 echo "<input type=\"submit\" value=\"Delete Selected\">";
-                echo "<table style=\"width:25%\">";
+                echo "<table>";
                 echo "<tr>
                 <td><strong>Course ID</strong></td>
                 <td><strong>Season</strong></td>

@@ -93,7 +93,7 @@
                     <td>".$row["program_code"]."</td>
                     <td>".$row["course_code"]."</td>
                     <td>".$row["course_name"]."</td>
-                    <td>".$row["course_description"]."</td>
+                    <td class = \"description\">".$row["course_description"]."</td>
                     <td>".$row["credits"]."</td>";
                     if ($row["required"] == NULL) {
                         $output = $output . "<td>false</td>";

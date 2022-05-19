@@ -2,7 +2,9 @@ table, th, td {
     border: 1px solid lime;
     border-collapse: collapse;
     border-spacing: 1em;
-    width: 90%;
+}
+td.description {
+    padding: 10px;
 }
 body {
     margin: 1em;

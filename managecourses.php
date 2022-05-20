@@ -16,7 +16,7 @@
 
 <body>
 	<h2>Course Management</h2>
-	<form action="deletecourse.php">
+	<form action="deletecourse.php" style="min-width: 1280px; max-width: 100%;">
         <?php
             $servername = "localhost";  //mysql is on the same host as apache (not realistic but whatevs)
             $username = "admin1234";    //username for database
